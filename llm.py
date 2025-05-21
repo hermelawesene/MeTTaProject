@@ -1,5 +1,23 @@
 from transformers import pipeline
 
-model = pipeline("text-generation", model ="distilgpt2")
-response = model("What are the plants?", max_length=50, truncation=True, num_return_sequences=1)
-print(response)
+llm = pipeline("text2text-generation", model="flax-community/t5-recipe-generation")
+
+prompt = """RECIPE FORMAT:
+NAME: [Name]
+INGREDIENTS: 
+- [Item1]
+- [Item2] 
+STEPS:
+1) [Step1]
+2) [Step2]
+
+Generate using tomatoes and pasta:"""
+
+response = llm(
+    prompt,
+    max_new_tokens=150,
+    temperature=0.5,
+    repetition_penalty=1.3
+)
+
+print(response[0]["generated_text"])
