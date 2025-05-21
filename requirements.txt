@@ -1,0 +1,4 @@
+hyperon
+torch
+transformers
+streamlit
