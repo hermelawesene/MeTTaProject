@@ -1,4 +1,4 @@
-hyperon
+git+https://github.com/trueagi-io/hyperon.git
 torch
 transformers
 streamlit
