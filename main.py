@@ -53,7 +53,7 @@ def find_recipes(ingredients, dietary=None):
     return matching_recipes
 
 def generate_recipe_description(recipe_name, ingredients):
-    # Prompt for DistilGPT-2, inspired by provided example
+    # Prompt for DistilGPT-2
     ingredients_str = ", ".join(ingredients)
     prompt = f"""
     RECIPE FORMAT:
